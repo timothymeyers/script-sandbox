@@ -56,7 +56,9 @@ az group create -l $myAzureRegionName -n $myResourceGroupAKS
 az aks create -n $myAKSCluster -g $myResourceGroupAKS \
 --node-osdisk-diskencryptionset-id $diskEncryptionSetId \
 --kubernetes-version $KUBERNETES_VERSION \
---generate-ssh-keys
+--generate-ssh-keys \
+--node-count 5 \
+--enable-addons monitoring
 # --service-principal $spAppId \
 # --client-secret $spPassword
 
